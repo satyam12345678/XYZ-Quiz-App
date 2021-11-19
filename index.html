@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Quiz App</title>
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+        </head>
+        <body>
+            <div class="strBtn"><button>Start</button></div>
+
+            <div class="instructDiv">
+            <div class="instructTitle"><span>Instructions for the quiz</span></div>
+            <div class="instructs">
+                <div class="ins">1. Every question has <span>15 seconds</span>. You must complete it within 15 seconds.</div>
+                <div class="ins">2. Once you select your answer, you can't change it.</div>
+                <div class="ins">3. Once the timer runs off you can't attempt that particular question.</div>
+                <div class="ins">4. Quitting is not allowed once the quiz has been started.</div>
+                <div class="ins">5. Each question carries 1 point with no negative marking for incorrect answers.</div>
+            </div>
+            <div class="btns">
+                <button class="quit">Exit</button>
+                <button class="res">Continue</button>
+            </div>
+            </div>
+
+        <div class="quizDiv">
+            <header>
+                <div class="heading">XYZ Quiz App</div>
+                <div class="timer">
+                    <div class="timeLft">Time Left</div>
+                    <div class="seconds">15</div>
+                </div>
+            </header>
+            <section>
+                <div class="ques">
+                </div>
+                <div class="opt">
+                </div>
+            </section>
+
+            <footer>
+                <div class="currQues">
+                </div>
+                <button class="nxtBtn">Next</button>
+            </footer>
+        </div>
+
+        <div class="resBox">
+            <div class="icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="endTxt">You have completed the quiz!</div>
+            <div class="score">
+            </div>
+            <div class="btns">
+                <button class="res">Replay</button>
+                <button class="quit">Quit</button>
+            </div>
+        </div>
+
+        <script src="js/questions.js"></script>
+
+        <script src="js/script.js"></script>
+
+        </body>
+    </html>
+</html>

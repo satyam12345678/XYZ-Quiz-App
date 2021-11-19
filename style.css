@@ -1,0 +1,382 @@
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+body{
+    background: #1c090c;
+}
+
+.strBtn,
+.instructDiv,
+.quizDiv,
+.resBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.instructDiv.activeInfo,
+.quizDiv.activeQuiz,
+.resBox.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.strBtn button{
+    font-size: 25px;
+    font-weight: 500;
+    color: #be8d02;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #ff0020;
+    cursor: pointer;
+}
+
+.instructDiv{
+    width: 540px;
+    background: #1c090c;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.instructDiv .instructTitle{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+div{
+    color: #be8d02;
+}
+
+.instructDiv .instructs{
+    padding: 15px 30px;
+}
+
+.instructDiv .instructs .ins{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.instructDiv .instructs .ins span{
+    font-weight: 600;
+    color: #ff0020;
+}
+.instructDiv .btns{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: 1px solid lightgrey;
+}
+
+.instructDiv .btns button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+.quizDiv{
+    width: 550px;
+    background: #1c090c;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.quizDiv header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #1c090c;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.quizDiv header .heading{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quizDiv header .timer{
+    color: #004085;
+    background: #4a4d4e;
+    border: 1px solid #000;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+
+.quizDiv header .timer .timeLft{
+    font-weight: 500;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quizDiv header .timer .seconds{
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #1c090c;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: #be8d02;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+
+.quizDiv header .timeBar{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #be8d02;
+}
+
+section{
+    padding: 25px 30px 20px 30px;
+    background: #1c090c;
+}
+
+section .ques{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+section .opt{
+    padding: 20px 0px;
+    display: block;   
+}
+
+section .opt .option{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .opt .option:last-child{
+    margin-bottom: 0px;
+}
+
+section .opt .option:hover{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+section .opt .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .opt .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .opt .option.disabled{
+    pointer-events: none;
+}
+
+section .opt .option .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+}
+.opt .option .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.opt .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+
+footer{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .currQues span{
+    display: flex;
+    user-select: none;
+}
+
+footer .currQues span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+footer .currQues span p:first-child{
+    padding-left: 0px;
+}
+
+footer button{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #be8d02;
+    border-radius: 5px;
+    background: #ff0020;
+    border: 1px solid #000;
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer button:hover{
+    background: #070203;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.resBox{
+    background: #1c090c;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.resBox .icon{
+    font-size: 100px;
+    color: #be8d02;
+    margin-bottom: 10px;
+}
+
+.resBox .endTxt{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.resBox .score span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.resBox .score span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+.resBox .btns{
+    display: flex;
+    margin: 20px 0;
+}
+
+.resBox .btns button{
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+.btns button.res{
+    color: #be8d02;
+    background: #ff0020;
+}
+
+.btns button.res:hover{
+    background: #070203;
+}
+
+.btns button.quit{
+    color: #be8d02;
+    background: #4a4d4e;
+}
+
+.btns button.quit:hover{
+    background: #070203;
+}
